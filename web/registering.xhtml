@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>teacher adding</title>
+        <style>
+                    
+          #he{ background-color: lightblue;
+  color: white;
+  padding: 40px;
+  text-align: center;
+          }
+            #re2{
+             
+                padding: 30px;
+                
+                font-size: 10px;
+                background-color: brown;
+            }
+            #re3{
+             
+                padding: 30px;
+                
+                font-size: 10px;
+                background-color: brown;
+            }
+             #re4{
+             
+                padding: 30px;
+                
+                font-size: 10px;
+                background-color: brown;
+            }
+             #re5{
+             
+                padding: 30px;
+                
+                font-size: 10px;
+                background-color: brown;
+            }
+            .icon4{
+                position: relative;
+                top: 10px;
+            }   
+                
+           
+         .icon5{
+                position: relative;
+                top: 10px;
+                float: right;
+            }   
+                 
+            .icon6{
+                position: absolute;
+           top: 100px;
+              left: 500px;
+              
+            }  
+            .icon7{
+              position: absolute;
+             top: 400px;
+              left: 500px;
+             
+              
+            }
+            .icon8{
+                margin: 20px;
+               
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius:28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #000000;
+  font-size: 39px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.icon8:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+         
+            
+        </style>
+    </h:head>
+    <h:body>
+         <h1 id= "he" > teacher information </h1>
+        <div 
+            class="icon5"> <img src="image/y6.jpg"></img>
+        </div> 
+        <div
+            class="icon4"><img  src="image/y5.jpeg">
+                
+            </img></div>
+        
+          <h:form>
+              <div class="icon6">
+                  
+             
+          <h:panelGrid columns="1" style="color: green">
+            <h:outputLabel for="txtteachername"> 
+                <h:outputText value=" teacher name"/> 
+                
+            <h:inputText id="txtteachername" value="#{register.teacherName}"/>
+               </h:outputLabel>
+              </h:panelGrid>
+            <br/>
+           
+              <h:panelGrid columns="2" style="color: green">
+            <h:outputLabel for="txtteacherid"> 
+                <h:outputText value=" teacher id nu"/> 
+                
+            <h:inputText id="txtteacherid" value="#{register.teacherid}"/>
+               </h:outputLabel>
+              </h:panelGrid>
+            <br/>
+             <br/>
+              <h:panelGrid columns="3" style="color: green">
+            <h:outputLabel for="txtdat"> 
+                <h:outputText value="enter  date cla"/> 
+                
+            <h:inputText id="txtdat" value="#{register.date}"/>
+               </h:outputLabel>
+              </h:panelGrid>
+            <br/>
+            <h:panelGrid columns="4" style="color: green">
+            <h:outputLabel for="txtpassword"> 
+                  <h:outputText value="enter Passwor"/>
+                 <h:inputSecret id="txtpassword" value="#{register.pass}"  />
+              
+             </h:outputLabel>
+               
+            </h:panelGrid>
+            
+               <br/>
+            <h:panelGrid columns="4" style="color: green">
+                <h:outputLabel> status </h:outputLabel>
+                <h:selectOneRadio id="attend">
+                    
+                    <f:selectItem itemValue="present" itemLabel="present"/> 
+                    <f:selectItem itemValue="absent" itemLabel="absent"/> 
+                </h:selectOneRadio>
+               
+            </h:panelGrid>
+  
+               
+            </div>
+              <div class="icon7">
+            <h:commandButton  class="icon8" value="add" action="#{register.techregister}"/>
+           
+           
+             <h:commandButton class="icon8" value="remove"/>
+           
+         
+             <h:commandButton class="icon8" value="update"/>
+            
+           
+             <h:commandButton  class="icon8" value="view all"/>
+            </div>
+            </h:form>
+    </h:body>
+</html>
+

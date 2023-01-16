@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <style>
+            body{
+                background-image: Url("image/y7.jpeg");
+                background-size: 100%;
+                background-position: center;
+            }
+            .iconn{
+            position: absolute;
+            top: 10px;
+            left: 400px;
+            color: white;
+                
+            }  
+            .iconn2{
+                position: absolute;
+                top: 100px;
+                left: 500px;
+            }
+            .iconn3{
+                margin: 10px;
+            }
+            .iconn5{
+                
+                position: absolute;
+                 top: 100px;
+                left: 900px;
+            }
+                        .iconn4{
+                margin: 10px;
+            }
+               .iconn6{
+              position: absolute;
+             bottom:  100px;
+              left: 500px;
+             
+              
+            }
+            .opp{
+                color: red;
+                font-size: 2;
+            }
+            .iconn7{
+                margin: 40px;
+               
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  text-shadow: 2px 1px 1px #666666;
+  font-family: Courier New;
+  color: #000000;
+  font-size: 16px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.conn7:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+            }
+            
+        </style>
+    </h:head>
+    <h:body>
+        <h1>
+            <div class="iconn">
+            student registering
+            </div>
+        </h1>  
+        <h:form>
+            <div class="iconn2">
+                <div class="iconn3">   <h:outputLabel  for="txtstufiName"> 
+                        <h:outputText class="opp" value="stu fname"/> 
+                <h:inputText id="txtstufiName" value="#{studentt.fname}" />
+            </h:outputLabel>
+            </div>
+            <br>  </br>             
+
+           <div class="iconn3"> 
+           
+            <h:outputLabel for="txtstulaName"> 
+                  <h:outputText class="opp" value="stu lname"/>
+                 <h:inputText id="txtstulaName" value="#{studentt.lname}"  />
+              </h:outputLabel>
+           </div>
+            <br>  </br> 
+              <div class="iconn3"> 
+            <h:outputLabel for="txtstuid"> 
+                  <h:outputText class="opp" value="id numb"/>
+                 <h:inputText id="txtstuid" value="#{studentt.idnu}"/>
+              </h:outputLabel>
+              </div>
+            <br>  </br> 
+              <div class="iconn3"> 
+             <h:outputLabel for="txtdep"> 
+                  <h:outputText class="opp" value="departe"/>
+                 <h:inputText id="txtdep" value="#{studentt.departement}"/>
+              </h:outputLabel>
+              </div>
+            
+            </div>
+              <div class="iconn5">
+               <div class="iconn4">   <h:outputLabel  for="txttot"> 
+                <h:outputText class="opp" value="total stu"/> 
+                <h:inputText id="txttot" value="#{studentt.totalstudent}"/>
+            </h:outputLabel>
+            </div>
+            <br>  </br>             
+
+           <div class="iconn4"> 
+           
+            <h:outputLabel for="txtechName"> 
+                  <h:outputText class="opp" value="teac name"/>
+                 <h:inputText id="txtechName" value="#{studentt.teachname}"  />
+              </h:outputLabel>
+           </div>
+            <br>  </br> 
+              <div class="iconn4"> 
+            <h:outputLabel for="txttechid"> 
+                  <h:outputText class="opp" value="teache id"/>
+                 <h:inputText id="txtteachuid" value="#{studentt.teachid}"/>
+              </h:outputLabel>
+              </div>
+            <br>  </br> 
+          
+              <div class="iconn4"> 
+             <h:outputLabel for="txtdat"> 
+                  <h:outputText class="opp" value="date of c"/>
+                 <h:inputText id="txtdat" value="#{studentt.dateof}"/>
+              </h:outputLabel>
+              </div>
+             
+                <h:outputLabel>  status </h:outputLabel>
+                <h:selectOneRadio id="attendd">
+                    
+                    <f:selectItem class="opp" itemValue="present" itemLabel="present"/> 
+                    <f:selectItem class="opp" itemValue="absent" itemLabel="absent"/> 
+                </h:selectOneRadio>
+               
+         
+            
+            
+            
+            </div>
+             <div class="iconn6">
+            <h:commandButton  class="iconn7" value="add" action="#{studentt.sturegister}"/>
+           
+           
+             <h:commandButton class="iconn7" value="remove"/>
+           
+         
+             <h:commandButton class="iconn7" value="update"/>
+            
+           
+             <h:commandButton  class="iconn7" value="view all"/>
+             </div>
+            </h:form>
+    </h:body>
+</html>
+

@@ -20,6 +20,33 @@
                    float: left;
              
           }
+          .logg {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.logg:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+          
         </style>
     </h:head>
     <h:body>
@@ -29,24 +56,26 @@
           <h:panelGrid columns="1" style="color: green">
             <h:outputLabel for="txtUserName"> 
                 <h:outputText value=" username"/> 
-                
-            <h:inputText id="txtUserName" value="#{obj.userName}"/>
+               
+            <h:inputText id="txtUserName" required="true" requiredMessage="username is required" validatorMessage="user name must be" value="#{logg.userName}" />
+            
                </h:outputLabel>
               </h:panelGrid>
             <br/>
             <h:panelGrid columns="2" style="color: green">
             <h:outputLabel for="txtpassword"> 
                   <h:outputText value="userPass"/>
-                 <h:inputSecret id="txtpassword"  value="#{obj.password}"  />
+                  <h:inputSecret id="txtpassword"  required="true" requiredMessage="username is required" validatorMessage="user name must be" value="#{logg.password}"  />
               
              </h:outputLabel>
                
             </h:panelGrid>
                   <br/>
                  <h:panelGrid columns="3" style="color: green">
-                   <h:commandButton style="background-color: red" value="login"/>
+                   <h:commandButton class="logg" value="login" action="AdminPanel"/>
                     </h:panelGrid>
                   </h:form>
+          
         
     </h:body>
 </html>

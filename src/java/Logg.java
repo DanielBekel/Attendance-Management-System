@@ -3,7 +3,7 @@ import javax.faces.bean.SessionScoped;
 
 
 
-@ManagedBean(name="obj")
+@ManagedBean
 @SessionScoped
 
 
@@ -26,11 +26,5 @@ public class Logg {
     public void setPassword(String password) {
         this.password = password;
     }
-  public String add(){
-      
-
-     return "index";
-      
-
-  }
+ 
 }
