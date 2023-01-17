@@ -4,14 +4,26 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>report page</title>
+        <style>
+              .hea{ background-color: black;
+  color: white;
+  padding: 40px;
+  text-align: center;
+          }  
+            
+            
+            
+        </style>
     </h:head>
     <h:body>
-        <h1>
-         REPORTING ADDITION PAGE   
-       </h1>
+        <h1 id="hea" > REPORTING ADDITION PAGE  </h1>
+              
+       
        <h:form>
             <div class="iconn2">
-                <div class="iconn3">   <h:outputLabel  for="txtstecheName"> 
+                <div class="iconn3"> 
+                   
+                    <h:outputLabel  for="txtstecheName"> 
                         <h:outputText class="idd" value="teach_name"/> 
                 <h:inputText id="txtstecheName" value="#{report.teacherName}" />
             </h:outputLabel>
