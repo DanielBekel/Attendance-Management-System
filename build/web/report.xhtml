@@ -1,7 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+     
     <h:head>
         <title>report page</title>
         <style>
@@ -28,7 +30,15 @@
                 <h:inputText id="txtstecheName" value="#{report.teacherName}" />
             </h:outputLabel>
             </div>
-            <br>  </br>             
+            <br>  </br> 
+<h:selectOneMenu value="userData">
+    <f:selectItem itemValue="1" itemLabel="Ethiopia" />
+   <f:selectItem itemValue="2" itemLabel="India" />  
+    <f:selectItem itemValue="2" itemLabel="Canada" />   
+     <f:selectItem itemValue="2" itemLabel="America" />   
+      <f:selectItem itemValue="2" itemLabel="China" />   
+       <f:selectItem itemValue="2" itemLabel="Kongo" />                     
+                         </h:selectOneMenu><br></br>            
 
            <div class="iconn3"> 
            
