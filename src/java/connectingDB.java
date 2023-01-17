@@ -27,7 +27,7 @@ public class connectingDB {
        // System.out.println("Connecting to a selected database...");
         con = DriverManager.getConnection(DB_URL, USER, PASS);
         if (con != null) {
-           System.out.println("Connected database successfully...");
+           System.out.println("Connected database successfully");
         } else {
            System.out.println("nFailed to connect to Oracle DB");
        }
