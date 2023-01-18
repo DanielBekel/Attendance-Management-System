@@ -3,11 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-     
     <h:head>
         <title>report page</title>
         <style>
-              .hea{ background-color: black;
+              #hea{ background-color: #E4F9F5;
   color: white;
   padding: 40px;
   text-align: center;
@@ -18,61 +17,58 @@
         </style>
     </h:head>
     <h:body>
-        <h1 id="hea" > REPORTING ADDITION PAGE  </h1>
-              
-       
+        <h1>
+            <div class="hea">
+           report
+            </div>
+        </h1> 
        <h:form>
-            <div class="iconn2">
-                <div class="iconn3"> 
+             
                    
                     <h:outputLabel  for="txtstecheName"> 
                         <h:outputText class="idd" value="teach_name"/> 
                 <h:inputText id="txtstecheName" value="#{report.teacherName}" />
             </h:outputLabel>
-            </div>
-            <br>  </br> 
-<h:selectOneMenu value="userData">
-    <f:selectItem itemValue="1" itemLabel="Ethiopia" />
-   <f:selectItem itemValue="2" itemLabel="India" />  
-    <f:selectItem itemValue="2" itemLabel="Canada" />   
-     <f:selectItem itemValue="2" itemLabel="America" />   
-      <f:selectItem itemValue="2" itemLabel="China" />   
-       <f:selectItem itemValue="2" itemLabel="Kongo" />                     
-                         </h:selectOneMenu><br></br>            
+          
+            <br>  </br>             
 
-           <div class="iconn3"> 
            
-            <h:outputLabel for="txtbatch"> 
-                  <h:outputText class="idd" value="select batch"/>
-                 <h:inputText id="txtbatch" value="#{report.selectBatch}"  />
-              </h:outputLabel>
-           </div>
-            <br>  </br> 
-              <div class="iconn3"> 
+      
+
+<h:selectOneMenu value="userData">
+    <f:selectItem itemValue="1" itemLabel="2017" />
+   <f:selectItem itemValue="2" itemLabel="2018" />  
+    <f:selectItem itemValue="2" itemLabel="2019" />   
+     <f:selectItem itemValue="2" itemLabel="2020" />   
+      <f:selectItem itemValue="2" itemLabel="2021" />   
+       <f:selectItem itemValue="2" itemLabel="2022" /> 
+         <f:selectItem itemValue="2" itemLabel="2023" />  
+                         </h:selectOneMenu><br></br>
+            
             <h:outputLabel for="txtstuuname"> 
                   <h:outputText class="idd" value="stude_name"/>
                  <h:inputText id="txtstuuname" value="#{report.studentName}"/>
               </h:outputLabel>
-              </div>
+           
             <br>  </br> 
-             <div class="iconn3"> 
+           
             <h:outputLabel for="txttotalp"> 
                   <h:outputText class="idd" value="total present"/>
                  <h:inputText id="txttotalp" value="#{report.totalPresent}"/>
               </h:outputLabel>
-              </div>
+            
             <br>  </br> 
-             <div class="iconn3"> 
+             
             <h:outputLabel for="txttotalpa"> 
                   <h:outputText class="idd" value="total absent"/>
                  <h:inputText id="txttotalpa" value="#{report.totalAbsent}"/>
               </h:outputLabel>
-               
-              </div>
+                </h:form>
+             
             <br>  </br> 
             <h:commandButton value="submit" />
-            </div>
-              </h:form>
+            
+             
     </h:body>
 </html>
 
