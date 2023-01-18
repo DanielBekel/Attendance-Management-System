@@ -1,5 +1,12 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
 
 
 
@@ -26,5 +33,29 @@ public class Logg {
     public void setPassword(String password) {
         this.password = password;
     }
- 
+ public String validateMethod() throws SQLException, ClassNotFoundException {
+        boolean status = Validation.valid(userName, password);
+        if (status) {
+              connectingDB dbcon = new connectingDB();
+            Connection con = dbcon.connMethod();
+            PreparedStatement ps = con.prepareStatement("select ADMINAME from LOGINAUTHO where ADMINAME=?");
+            ps.setString(1, userName);   
+          
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            String UserName =rs.getString(1);
+            if ("Dani".equals(UserName)) {
+                return "AdminPanel";
+            } else {
+                return "Loginn";
+            }
+        } else {
+            FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+                            "Incorrect Username and Passowrd",
+                            "Please enter correct username and Password"));
+            return "ManuPage";
+        }
+    }
 }
