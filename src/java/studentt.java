@@ -20,10 +20,10 @@ public class studentt {
   private String teachname;
   private String teachid;
   private String dateof;
-  public studentt(){
+ 
       
-  }
-
+   
+  
     public String getFname() {
         return fname;
     }
