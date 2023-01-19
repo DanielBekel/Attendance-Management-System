@@ -34,7 +34,7 @@ public class Logg {
         this.password = password;
     }
  public String validateMethod() throws SQLException, ClassNotFoundException {
-        boolean status = Validation.valid(userName, password);
+        boolean status = valid(userName, password);
         if (status) {
               connectingDB dbcon = new connectingDB();
             Connection con = dbcon.connMethod();
@@ -58,4 +58,25 @@ public class Logg {
             return "ManuPage";
         }
     }
+ 
+    public static boolean valid(String name, String pass) {
+        boolean check = false;
+        try {
+
+            connectingDB dbcon = new connectingDB();
+            Connection con = dbcon.connMethod();
+            PreparedStatement ps = con.prepareStatement("select * from LOGINAUTHO where ADMINAME=? and PASSWORD=?");
+            ps.setString(1, name);
+            ps.setString(2, pass);
+            ResultSet rs = ps.executeQuery();
+            check = rs.next();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return check;
+    }
+    
 }
+ 
+
