@@ -20,6 +20,15 @@ public class studentt {
   private String teachname;
   private String teachid;
   private String dateof;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+  private String status;
  
       
    
@@ -91,7 +100,7 @@ public class studentt {
         try {
             connectingDB db=new connectingDB();
              Connection connection = db.connMethod();
-        PreparedStatement stmt=connection.prepareStatement("Insert into STUDEN(FNAME,LNAME,IDNU,DEPARTEMENT,TOTALSTUDENT,TEACHNAME,TEACHID,DATEOF) values (?,?,?,?,?,?,?,?)");     
+        PreparedStatement stmt=connection.prepareStatement("Insert into STUDEN(FNAME,LNAME,IDNU,DEPARTEMENT,TOTALSTUDENT,TEACHNAME,TEACHID,DATEOF,STATUS) values (?,?,?,?,?,?,?,?,?)");     
         stmt.setString(1,fname);  
         stmt.setString(2,lname);  
         stmt.setString(3,idnu);  
@@ -100,6 +109,7 @@ public class studentt {
         stmt.setString(6,teachname);  
         stmt.setString(7,teachid);  
         stmt.setString(8,dateof); 
+          stmt.setString(9,status);
         stmt.executeUpdate();  
             System.err.println("success");
         }
