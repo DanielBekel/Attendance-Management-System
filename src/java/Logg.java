@@ -44,7 +44,7 @@ public class Logg {
             ResultSet rs = ps.executeQuery();
             rs.next();
             String UserName =rs.getString(1);
-            if ("Dani".equals(UserName)) {
+            if ("mark".equals(UserName)) {
                 return "AdminPanel";
             } else {
                 return "Loginn";
@@ -59,15 +59,15 @@ public class Logg {
         }
     }
  
-    public static boolean valid(String name, String pass) {
+    public static boolean valid(String adminame, String password) {
         boolean check = false;
         try {
 
             connectingDB dbcon = new connectingDB();
             Connection con = dbcon.connMethod();
             PreparedStatement ps = con.prepareStatement("select * from LOGINAUTHO where ADMINAME=? and PASSWORD=?");
-            ps.setString(1, name);
-            ps.setString(2, pass);
+            ps.setString(1, adminame);
+            ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
             check = rs.next();
 
