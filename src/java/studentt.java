@@ -10,8 +10,9 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean
 @SessionScoped
 public class studentt {
-  
+ public studentt(){
     
+}
   private String fname;
   private String lname;
   private String idnu;
@@ -21,6 +22,8 @@ public class studentt {
   private String teachid;
   private String dateof;
  private String status;
+
+   
     public String getStatus() {
         return status;
     }

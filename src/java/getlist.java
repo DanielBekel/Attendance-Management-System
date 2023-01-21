@@ -1,47 +1,51 @@
 
 
-  import java.io.Serializable;
+
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.enterprise.context.Dependent;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-
-@Dependent
+import javax.faces.bean.RequestScoped;
 @ManagedBean
 
-@SessionScoped
-public class getlist  {
-
-    public List<studentt> getUserList() {
-        List<studentt> list = new ArrayList<>();
-        try {
+public class getlist {
+      public List <Retrieve> staffList;
+    public List <Retrieve> DisplayStu() throws ClassNotFoundException{
+    staffList = new ArrayList<>();
+    
+    
+      
+    try{
         
-       connectingDB dbcon = new connectingDB();
+          connectingDB dbcon = new connectingDB();
             Connection con = dbcon.connMethod();
-            ResultSet rs = con.createStatement().executeQuery("select * from STUDEN");
-            while (rs.next()) {
-                studentt admin = new studentt();
-                admin.setFname(rs.getString("FNAME"));
-                admin.setLname(rs.getString("LNAME"));
-                admin.setIdnu(rs.getString("IDNU"));
-                admin.setDepartement(rs.getString("DEPARTEMENT"));
-                admin.setTotalstudent(rs.getString("TOTALSTUDENT"));
-                admin.setTeachname(rs.getString("TEACHERNAME"));
-                admin.setTeachid(rs.getString("TEACHID"));
-                 admin.setDateof(rs.getString("DATEOF"));
-                 admin.setStatus(rs.getString("STATUS"));
-                //course[1]=rs.getString("COURSE");
-                //usr.setCourse(course);
-                list.add(admin);
-            }
-        } catch (ClassNotFoundException | SQLException e) {
-        }
-        return list;
+             ResultSet rs = con.createStatement().executeQuery("select * from STUDEN");
+                 while (rs.next()) {
+             
+          
+                String fname = rs.getString("FNAME");                             
+               String  lname = rs.getString("LNAME");
+                   String idnuu = rs.getString("IDNU");
+                   String  depar = rs.getString("DEPARTEMENT");
+                String tots = rs.getString("TOTALSTUDENT");
+                 String  teaname = rs.getString("TEACHNAME");
+                   String  teaid = rs.getString("TEACHID");
+                  String  dates = rs.getString("DATEOF");
+              String  sta = rs.getString("STATUS");
+                staffList.add(new Retrieve(fname,lname,idnuu,depar,tots,teaname,teaid,dates,sta));
+            } 
+             
+    }catch( SQLException e)
+    {
+    
+    
+    }
+    
+    return staffList;
+    }
     }
 
-}  
 
