@@ -20,7 +20,7 @@ public class studentt {
   private String teachname;
   private String teachid;
   private String dateof;
-
+ private String status;
     public String getStatus() {
         return status;
     }
@@ -28,7 +28,7 @@ public class studentt {
     public void setStatus(String status) {
         this.status = status;
     }
-  private String status;
+ 
  
       
    

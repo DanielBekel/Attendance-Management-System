@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body style="background-color:white">
+       
+        <div >
+            <p style="text-align: center; background-color: #52ff7f">  student information  </p></div>
+        <div>
+
+            <h:dataTable  value="#{getlist.getUserList()}"
+                          var="varcolumn" style=" border: 1px red;">   
+                <h:column>
+                    <f:facet name="header">
+                       FNAME 
+                    </f:facet>
+                    #{varcolumn.fname}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header" class="text-center alert-warning">
+                      LNAME
+                    </f:facet>
+                    #{varcolumn.lname}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                       IDNU
+                    </f:facet>
+                    #{varcolumn.idnu}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                       DEPARTEMENT
+                    </f:facet>
+                    #{varcolumn.departement}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                       TOTALSTUDENT
+                        <a href="../src/java/CustomerManage.java"></a>
+                    </f:facet>
+                    #{varcolumn.totalstudent}
+                </h:column>
+                 <h:column>
+                    <f:facet name="header">
+                        TEACHNAME
+                    </f:facet>
+                    #{varcolumn.teachname}
+                    
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                       TEACHID
+                    </f:facet>
+                    #{varcolumn.teachid}
+                    
+                </h:column>
+               <h:column>
+                    <f:facet name="header">
+                      DATEOF
+                    </f:facet>
+                    #{varcolumn.dateof}
+                    
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                    STATUS
+                    </f:facet>
+                    #{varcolumn.status}
+                    
+                </h:column>
+            </h:dataTable>
+    
+        </div>
+    </h:body>
+</html>
+
