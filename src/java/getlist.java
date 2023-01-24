@@ -13,7 +13,7 @@ import javax.faces.bean.RequestScoped;
 
 public class getlist {
       public List <Retrieve> staffList;
-    public List <Retrieve> DisplayStu() throws ClassNotFoundException{
+    public List <Retrieve> displayStu() throws ClassNotFoundException{
     staffList = new ArrayList<>();
     
     
@@ -26,8 +26,8 @@ public class getlist {
                  while (rs.next()) {
              
           
-                String fname = rs.getString("FNAME");                             
-               String  lname = rs.getString("LNAME");
+                String ttname = rs.getString("FNAME");                             
+               String  rrname = rs.getString("LNAME");
                    String idnuu = rs.getString("IDNU");
                    String  depar = rs.getString("DEPARTEMENT");
                 String tots = rs.getString("TOTALSTUDENT");
@@ -35,7 +35,7 @@ public class getlist {
                    String  teaid = rs.getString("TEACHID");
                   String  dates = rs.getString("DATEOF");
               String  sta = rs.getString("STATUS");
-                staffList.add(new Retrieve(fname,lname,idnuu,depar,tots,teaname,teaid,dates,sta));
+                staffList.add(new Retrieve(ttname,rrname,idnuu,depar,tots,teaname,teaid,dates,sta));
             } 
              
     }catch( SQLException e)

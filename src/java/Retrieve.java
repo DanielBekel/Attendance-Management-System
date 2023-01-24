@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedBean;
 
 
 @ManagedBean
+
 public class Retrieve {
   
 
@@ -51,15 +52,15 @@ public class Retrieve {
     }
 
 
-    private  String fname;
-    private  String lname;
-    private  String idnu;
-    private  String departement;
-    private  String totalstudent;
-    private  String teachname;
-    private  String teachid;
-    private  String dateof;
-    private  String status;
+    private final  String fname;
+    private final  String lname;
+    private final  String idnu;
+    private final  String departement;
+    private final  String totalstudent;
+    private final  String teachname;
+    private final  String teachid;
+    private final  String dateof;
+    private final  String status;
     
     
     public Retrieve(String fname, String lname, String idnu, String departement, String totalstudent, String teachname, String teachid, String dateof,String status)

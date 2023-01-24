@@ -47,7 +47,7 @@ public class Logg {
             if ("mark".equals(UserName)) {
                 return "AdminPanel";
             } else {
-                return "Loginn";
+                return "TeacherLogin";
             }
         } else {
             FacesContext.getCurrentInstance().addMessage(
