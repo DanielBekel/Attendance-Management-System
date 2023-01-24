@@ -2,8 +2,10 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Map;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 
 
@@ -15,7 +17,7 @@ public class studentt {
 }
   private String fname;
   private String lname;
-  private String idnu;
+  private static int idnu;
   private String departement;
   private String totalstudent;
   private String teachname;
@@ -52,11 +54,11 @@ public class studentt {
         this.lname = lname;
     }
 
-    public String getIdnu() {
+    public int getIdnu() {
         return idnu;
     }
 
-    public void setIdnu(String idnu) {
+    public void setIdnu(int idnu) {
         this.idnu = idnu;
     }
 
@@ -106,7 +108,7 @@ public class studentt {
         PreparedStatement stmt=connection.prepareStatement("Insert into STUDEN(FNAME,LNAME,IDNU,DEPARTEMENT,TOTALSTUDENT,TEACHNAME,TEACHID,DATEOF,STATUS) values (?,?,?,?,?,?,?,?,?)");     
         stmt.setString(1,fname);  
         stmt.setString(2,lname);  
-        stmt.setString(3,idnu);  
+        stmt.setInt(3,idnu);  
         stmt.setString(4,departement); 
          stmt.setString(5,totalstudent);  
         stmt.setString(6,teachname);  
@@ -119,5 +121,43 @@ public class studentt {
         catch (SQLException e) {
         }
     }
+          public static String delete(int idnu){
+        System.out.println("deleted " + idnu);
+        try {
+             connectingDB db=new connectingDB();
+             Connection connection = db.connMethod();
+            PreparedStatement stmt=connection.prepareStatement("delete from STUDEN where IDNU = " + idnu);  
+            stmt.executeUpdate();  
+            connection.close();
+        } catch(Exception sqlException){
+            sqlException.printStackTrace();
+        }
+        return "/student.xhtml?faces-redirect=true";
+    }
+          public static String update(studentt updateStudentObj) {
+        try {
+            Map<String,Object> sessionMapObj = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+            connectingDB db=new connectingDB();
+             Connection connection = db.connMethod();
+            PreparedStatement stmt=connection.prepareStatement("update STUDEN set fname=?, lname=?, idnu=?,departement=?, totalstudent=?,teachname=?,teachid=?,dateof=?,status=? where idnu=?");    
+            stmt.setString(1,updateStudentObj.getFname());  
+            stmt.setString(2,updateStudentObj.getLname());  
+            stmt.setInt(3,updateStudentObj.getIdnu());  
+            stmt.setString(4,updateStudentObj.getDepartement());  
+            stmt.setString(5,updateStudentObj.getTotalstudent());  
+            stmt.setString(6,updateStudentObj.getTeachname());  
+            stmt.setString(7,updateStudentObj.getTeachid());  
+            stmt.setString(8,updateStudentObj.getDateof());  
+            stmt.setString(9,updateStudentObj.getStatus());
+            stmt.executeUpdate();
+            
+            sessionMapObj.put("editRecordObj", idnu);
+            connection.close(); 
+        } catch(Exception sqlException) {
+            sqlException.printStackTrace();
+        }
+        return "/student.xhtml?faces-redirect=true";
+    }
+          
   
 }

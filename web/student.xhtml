@@ -163,10 +163,10 @@
             <h:commandButton  class="iconn7" value="add" action="#{studentt.sturegister}"/>
            
            
-             <h:commandButton class="iconn7" value="remove"/>
+            <h:commandButton class="iconn7" value="remove" action="#{studentt.delete(studentt.idnu)}"/>
            
          
-             <h:commandButton class="iconn7" value="update"/>
+             <h:commandButton class="iconn7" value="update" action="#{studentt.update(editRecordObj)}"/>
             
            
              <h:commandButton  class="iconn7" value="view all" action="datatable"/>

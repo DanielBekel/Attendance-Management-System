@@ -1,8 +1,11 @@
 
+
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
- import java.sql.*;
+
+import java.sql.SQLException;
+
+import java.sql.DriverManager;
 
 
        
@@ -27,9 +30,9 @@ public class connectingDB {
        // System.out.println("Connecting to a selected database...");
         con = DriverManager.getConnection(DB_URL, USER, PASS);
         if (con != null) {
-           System.out.println("Connected database successfully");
+           System.out.println("Connected to db");
         } else {
-           System.out.println("nFailed to connect to Oracle DB");
+           System.out.println("not connected to DB");
        }
         return con;
         

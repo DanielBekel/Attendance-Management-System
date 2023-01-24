@@ -23,8 +23,8 @@
 
 .pooop {
     position: absolute;
-                top: 170px;
-                left: 520px;
+                top: 200px;
+                left: 570px;
 	box-shadow:inset 0px 1px 0px 0px #efdcfb;
 	background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
 	background-color:#dfbdfa;
@@ -42,19 +42,36 @@
 	text-shadow:0px -2px 0px #9752cc;
 }
 
-            
+   .input {
+       
+       margin: 10px;
+     padding: 9px;
+     font-size: 15px;
+     border-width: 1px;
+     border-color: #CCCCCC;
+     background-color: #eae0e0;
+     color: #000000;
+     border-style: solid;
+     border-radius: 0px;
+     box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+     text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
+.owe{
+    border-radius: 5px;
+}
             
         </style>
         
     </h:head>
     <h:body>
-        <h:form>
+        <div class="owe">
+           <h:form>
                <div class="iconn21">
           <h:panelGrid columns="1" style="color: green">
             <h:outputLabel for="txtteachName"> 
                 <h:outputText value=" Teachername"/> 
                
-            <h:inputText id="txtteachName" required="true" requiredMessage="name is required" validatorMessage="user name must be"  />
+            <h:inputText id="txtteachName" class ="input" required="true" requiredMessage="name is required" validatorMessage="user name must be"  />
             
                </h:outputLabel>
               </h:panelGrid>
@@ -64,7 +81,7 @@
             <h:panelGrid columns="2" style="color: green">
             <h:outputLabel for="txtpassword"> 
                   <h:outputText value="teacherPassw"/>
-                  <h:inputSecret id="txtpassword" required="true" requiredMessage="password is required" validatorMessage="user name must be"  />
+                  <h:inputSecret id="txtpassword" class ="input" required="true" requiredMessage="password is required" validatorMessage="user name must be"  />
               
              </h:outputLabel>
                
@@ -76,7 +93,9 @@
                    <h:commandButton    class="pooop" value="sign in" action="student" />
                     </h:panelGrid>
                 </div>
-                  </h:form>
+                  </h:form> 
+        </div>
+        
     </h:body>
 </html>
 
