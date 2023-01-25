@@ -12,42 +12,40 @@ import javax.faces.bean.ManagedBean;
 public class Retrieve {
   
 
-
-
-    public String getName() {
+    public String getFName() {
         return fname;
     }
 
-    public String getAge() {
+    public String getLName() {
         return lname;
     }
 
-    public String getId() {
+    public String getIdnu() {
         return idnu;
     }
 
-    public String getGender() {
+    public String getDepartement() {
         return departement;
     }
 
-    public String getProff() {
+    public String getTotalStudent() {
         return totalstudent;
     }
 
-    public String getPhonee() {
+    public String getTeachName() {
         return teachname;
     }
   public String getTeachid() {
         return teachid;
     }
 
-    public String getAddresss() {
+    public String getDateOf() {
         return dateof;
     }
 
 
 
-    public String getDate() {
+    public String getStatus() {
         return status;
     }
 

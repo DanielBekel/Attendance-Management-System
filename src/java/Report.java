@@ -8,7 +8,7 @@ public class Report {
     
     private String teacherName;
     private String selectBatch;
-    private String studentName;
+    private String departement;
     private String totalPresent;
     private String totalAbsent;
    
@@ -33,11 +33,11 @@ public Report(){
     }
 
     public String getStudentName() {
-        return studentName;
+        return departement;
     }
 
     public void setStudentName(String studentName) {
-        this.studentName = studentName;
+        this.departement = studentName;
     }
 
     public String getTotalPresent() {

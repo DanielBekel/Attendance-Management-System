@@ -46,18 +46,36 @@
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
-          
+       .csstxt {
+     padding: 6px;
+     font-size: 20px;
+     border-width: 10px;
+     border-color: #CCCCCC;
+     background-color: #ffffff;
+     color: #000000;
+     border-style: solid;
+     border-radius: 19px;
+     box-shadow: 0px 0px 9px rgba(66,66,66,.77);
+     text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
+ .csstxt:focus {
+     outline:none;
+}   
         </style>
     </h:head>
     <h:body>
          <img id="icon" src="image/yy.jpg"></img>
         <h1 id ="log"> login page </h1>
         <h:form>
+            <div class="csstxt">
+                
+         
+                
           <h:panelGrid columns="1" style="color: green">
             <h:outputLabel for="txtUserName"> 
                 <h:outputText value=" username"/> 
                
-            <h:inputText id="txtUserName" required="true" requiredMessage="username is required" validatorMessage="user name must be" value="#{logg.userName}" />
+            <h:inputText id="txtUserName" class="csstxt" required="true" requiredMessage="username is required" validatorMessage="user name must be" value="#{logg.userName}" />
             
                </h:outputLabel>
               </h:panelGrid>
@@ -65,11 +83,12 @@
             <h:panelGrid columns="2" style="color: green">
             <h:outputLabel for="txtpassword"> 
                   <h:outputText value="userPass"/>
-                  <h:inputSecret id="txtpassword"  required="true" requiredMessage="password is required" validatorMessage="user name must be" value="#{logg.password}"  />
+                  <h:inputSecret id="txtpassword" class="csstxt"  required="true" requiredMessage="password is required" validatorMessage="user name must be" value="#{logg.password}"  />
               
              </h:outputLabel>
                
             </h:panelGrid>
+               </div>
                   <br/>
                  <h:panelGrid columns="3" style="color: green">
                    <h:commandButton class="logg" value="login" action="#{logg.validateMethod()}"/>

@@ -46,7 +46,22 @@
   text-decoration: none;
             }  
             
-            
+            .cssrepo {
+     padding: 9px;
+     font-size: 20px;
+     border-width: 11px;
+     border-color: #c4bfc4;
+     background-color: #ebf9f0;
+     color: #000000;
+     border-style: solid;
+     border-radius: 16px;
+     box-shadow: 0px 0px 9px rgba(66,66,66,.77);
+     text-shadow: -10px -11px 15px rgba(66,66,66,.75);
+
+}
+ .cssrepo:focus {
+     outline:none;
+}
         </style>
     </h:head>
     <h:body>
@@ -58,10 +73,10 @@
         
        <h:form>
              
-                   
+           <div class="cssrepo">
                     <h:outputLabel  for="txtstecheName"> 
                         <h:outputText class="idd" value="teach_name"/> 
-                <h:inputText id="txtstecheName" value="#{report.teacherName}" />
+                        <h:inputText id="txtstecheName" class="cssrepo" value="#{report.teacherName}" />
             </h:outputLabel>
           
             <br>  </br>             
@@ -69,7 +84,7 @@
            
       
             <h:outputLabel value="batch" style="margin: 20px"/>
-<h:selectOneMenu value="userData">
+<h:selectOneMenu value="userData" class="cssrepo" >
     <f:selectItem itemValue="2017" itemLabel="2017" />
    <f:selectItem itemValue="2018" itemLabel="2018" />  
     <f:selectItem itemValue="2019" itemLabel="2019" />   
@@ -79,29 +94,30 @@
          <f:selectItem itemValue="2023" itemLabel="2023" />  
                          </h:selectOneMenu><br></br>
               <br>  </br>  
-            <h:outputLabel for="txtstuuname"> 
-                  <h:outputText class="idd" value="stude_name"/>
-                 <h:inputText id="txtstuuname" value="#{report.studentName}"/>
+            <h:outputLabel for="txtdepartement"> 
+                  <h:outputText class="idd" value="departement"/>
+                 <h:inputText id="txtdepartement" class="cssrepo"  value="#{report.departement}"/>
               </h:outputLabel>
            
             <br>  </br> 
            
             <h:outputLabel for="txttotalp"> 
                   <h:outputText class="idd" value="total present"/>
-                 <h:inputText id="txttotalp" value="#{report.totalPresent}"/>
+                 <h:inputText id="txttotalp" class="cssrepo" value="#{report.totalPresent}"/>
               </h:outputLabel>
             
             <br>  </br> 
              
             <h:outputLabel for="txttotalpa"> 
                   <h:outputText class="idd" value="total absent"/>
-                 <h:inputText id="txttotalpa" value="#{report.totalAbsent}"/>
+                 <h:inputText id="txttotalpa" class="cssrepo"  value="#{report.totalAbsent}"/>
               </h:outputLabel>
-                </h:form>
+            </div>
+                
              
             <br>  </br> 
             <h:commandButton class ="sub" value="submit" />
-            
+            </h:form>
              
     </h:body>
 </html>

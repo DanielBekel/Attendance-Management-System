@@ -12,20 +12,20 @@
             <p style="text-align: center; background-color: #52ff7f">  student information  </p></div>
         <div>
 
-            <h:dataTable  value="#{getlist.displayStu()}"
+            <h:dataTable  value="#{getlist.getdisplayStu()}"
                           var="varcolumn" style=" border: 1px red;">   
                 <h:column>
                     <f:facet name="header">
                        FNAME 
                     </f:facet>
-                    #{varcolumn.fname}
+                    #{varcolumn.FName}
                 </h:column>
 
                 <h:column>
                     <f:facet name="header" class="text-center alert-warning">
                       LNAME
                     </f:facet>
-                    #{varcolumn.lname}
+                    #{varcolumn.LName}
                 </h:column>
 
                 <h:column>
@@ -45,13 +45,13 @@
                        TOTALSTUDENT
                         <a href="../src/java/CustomerManage.java"></a>
                     </f:facet>
-                    #{varcolumn.totalstudent}
+                    #{varcolumn.totalStudent}
                 </h:column>
                  <h:column>
                     <f:facet name="header">
                         TEACHNAME
                     </f:facet>
-                    #{varcolumn.teachname}
+                    #{varcolumn.teachName}
                     
                 </h:column>
                 <h:column>
@@ -65,7 +65,7 @@
                     <f:facet name="header">
                       DATEOF
                     </f:facet>
-                    #{varcolumn.dateof}
+                    #{varcolumn.dateOf}
                     
                 </h:column>
                 <h:column>

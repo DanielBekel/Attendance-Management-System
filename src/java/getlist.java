@@ -13,7 +13,7 @@ import javax.faces.bean.RequestScoped;
 
 public class getlist {
       public List <Retrieve> staffList;
-    public List <Retrieve> displayStu() throws ClassNotFoundException{
+    public List <Retrieve> getdisplayStu() throws ClassNotFoundException{
     staffList = new ArrayList<>();
     
     
@@ -22,7 +22,7 @@ public class getlist {
         
           connectingDB dbcon = new connectingDB();
             Connection con = dbcon.connMethod();
-             ResultSet rs = con.createStatement().executeQuery("select * from STUDEN");
+             ResultSet rs = con.createStatement().executeQuery("select * from STUDEN  ");
                  while (rs.next()) {
              
           
