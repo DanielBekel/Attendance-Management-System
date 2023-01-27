@@ -15,8 +15,8 @@ public class Report {
     private String teacherName;
     private String selectBatch;
     private String departement;
-    private int totalPresent;
-    private int totalAbsent;
+    private String totalPresent;
+    private String totalAbsent;
    
 public Report(){
     
@@ -46,19 +46,19 @@ public Report(){
         this.departement = departement;
     }
 
-    public int getTotalPresent() {
+    public String getTotalPresent() {
         return totalPresent;
     }
 
-    public void setTotalPresent(int totalPresent) {
+    public void setTotalPresent(String totalPresent) {
         this.totalPresent = totalPresent;
     }
 
-    public int getTotalAbsent() {
+    public String getTotalAbsent() {
         return totalAbsent;
     }
 
-    public void setTotalAbsent(int totalAbsent) {
+    public void setTotalAbsent(String totalAbsent) {
         this.totalAbsent = totalAbsent;
     }
     
@@ -66,12 +66,12 @@ public Report(){
         try {
             connectingDB db=new connectingDB();
              Connection connection = db.connMethod();
-        PreparedStatement stmt=connection.prepareStatement("Insert into REPORT(TEACHERNAME,SELECTBATCH,DEPARTEMENT,TOATALPRESENT,TOTALABSENT) values (?,?,?,?,?)");     
+        PreparedStatement stmt=connection.prepareStatement("Insert into REPORT(TEACHERNAME,SELECTBATCH,DEPARTEMENT,TOTALPRESENT,TOTALABSENT) values (?,?,?,?,?)");     
         stmt.setString(1,teacherName);  
         stmt.setString(2,selectBatch);  
         stmt.setString(3,departement);  
-        stmt.setInt(4,totalPresent); 
-         stmt.setInt(5,totalAbsent);  
+        stmt.setString(4,totalPresent); 
+         stmt.setString(5,totalAbsent);  
      
         stmt.executeUpdate();  
             System.err.println("success");

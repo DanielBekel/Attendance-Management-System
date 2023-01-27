@@ -1,5 +1,5 @@
 
-/*
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,9 +18,9 @@ import javax.faces.bean.RequestScoped;
 
 public class GettingReport {
    
-      public List <ReportRetrieve> stud;
+      public List <ReportRetrieve> rep;
     public List <ReportRetrieve> getdisplayReport() throws ClassNotFoundException{
-    stud = new ArrayList<>();
+    rep = new ArrayList<>();
     
     
       
@@ -28,7 +28,7 @@ public class GettingReport {
         
           connectingDB dbcon = new connectingDB();
             Connection con = dbcon.connMethod();
-             ResultSet rs = con.createStatement().executeQuery("select * from STUDEN  ");
+             ResultSet rs = con.createStatement().executeQuery("select * from REPORT  ");
                  while (rs.next()) {
              
           
@@ -38,7 +38,7 @@ public class GettingReport {
                   String totaP = rs.getString("TOTALPRESENT");
                 String tota = rs.getString("TOTALABSENT");
                  
-                stud.add(new ReportRetrieve(ttname,batch,depa,totaP,tota));
+                rep.add(new ReportRetrieve(ttname,batch,depa,totaP,tota));
             } 
              
     }catch( SQLException e)
@@ -47,7 +47,7 @@ public class GettingReport {
     
     }
     
-    return stud;
+    return rep;
     }
     }
-*/
+

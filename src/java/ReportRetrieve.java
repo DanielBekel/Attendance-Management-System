@@ -24,21 +24,21 @@ public class ReportRetrieve {
         return departement;
     }
 
-    public int getTotalPresent() {
+    public String getTotalPresent() {
         return totalPresent;
     }
 
-    public int gettotalAbsent() {
+    public String getTotalAbsent() {
         return totalAbsent;
     }
 
  private final String teacherName;
     private final String selectBatch;
     private final String departement;
-    private final int totalPresent;
-    private final int totalAbsent;
+    private final String totalPresent;
+    private final String totalAbsent;
     
-    public ReportRetrieve(String teacherName, String selectBatch, String departement, int totalPresent, int totalAbsent)
+    public ReportRetrieve(String teacherName, String selectBatch, String departement, String totalPresent, String totalAbsent)
     {
     this.teacherName =teacherName;
     this.selectBatch=selectBatch;

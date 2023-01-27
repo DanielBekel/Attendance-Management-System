@@ -10,21 +10,9 @@
 
 import javax.faces.bean.ManagedBean;
 
-
-
-
-
-
-
 @ManagedBean
 public class TeacherRetrieve {
-    
-
-
-
-  
-
-    public String getTeacherName() {
+ public String getTeacherName() {
         return teacherName;
     }
 
