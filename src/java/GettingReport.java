@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+
 
 
 
@@ -26,19 +26,19 @@ public class GettingReport {
       
     try{
         
-          connectingDB dbcon = new connectingDB();
-            Connection con = dbcon.connMethod();
-             ResultSet rs = con.createStatement().executeQuery("select * from REPORT  ");
-                 while (rs.next()) {
+          connectingDB dbconn = new connectingDB();
+            Connection con = dbconn.connMethod();
+             ResultSet resul = con.createStatement().executeQuery("select * from REPORT ");
+                 while (resul.next()) {
              
           
-                String ttname = rs.getString("TEACHERNAME");                             
-               String  batch = rs.getString("SELECTBATCH");
-                   String depa = rs.getString("DEPARTEMENT");
-                  String totaP = rs.getString("TOTALPRESENT");
-                String tota = rs.getString("TOTALABSENT");
+                String tteaname = resul.getString("TEACHERNAME");                             
+               String  batch = resul.getString("SELECTBATCH");
+                   String depa = resul.getString("DEPARTEMENT");
+                  String totaP = resul.getString("TOTALPRESENT");
+                String tota = resul.getString("TOTALABSENT");
                  
-                rep.add(new ReportRetrieve(ttname,batch,depa,totaP,tota));
+                rep.add(new ReportRetrieve(tteaname,batch,depa,totaP,tota));
             } 
              
     }catch( SQLException e)

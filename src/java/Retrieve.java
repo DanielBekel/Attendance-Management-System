@@ -20,7 +20,7 @@ public class Retrieve {
         return lname;
     }
 
-    public String getIdnu() {
+    public int getIdnu() {
         return idnu;
     }
 
@@ -35,8 +35,8 @@ public class Retrieve {
     public String getTeachName() {
         return teachname;
     }
-  public String getTeachid() {
-        return teachid;
+  public int getTeacherid() {
+        return teacherid;
     }
 
     public String getDateOf() {
@@ -54,16 +54,16 @@ public class Retrieve {
 
     private final  String fname;
     private final  String lname;
-    private final  String idnu;
+    private final  int idnu;
     private final  String departement;
     private final  String totalstudent;
     private final  String teachname;
-    private final  String teachid;
+    private final  int teacherid;
     private final  String dateof;
     private final  String status;
      private final  String batch;
     
-    public Retrieve(String fname, String lname, String idnu, String departement, String totalstudent, String teachname, String teachid, String dateof,String status,String batch)
+    public Retrieve(String fname, String lname, int idnu, String departement, String totalstudent, String teachname, int teacherid, String dateof,String status,String batch)
     {
     this.fname =fname;
     this.lname=lname;
@@ -72,7 +72,7 @@ public class Retrieve {
     this.totalstudent=totalstudent;
     this.teachname=teachname;
    
-    this.teachid=teachid;
+    this.teacherid=teacherid;
     this.dateof=dateof;
     this.status=status;
     this.batch=batch;

@@ -21,7 +21,7 @@ public class studentt {
   private String departement;
   private String totalstudent;
   private String teachname;
-  private String teachid;
+  private int teacherid;
   private String dateof;
  private String status;
 private String batch;
@@ -94,12 +94,12 @@ private String batch;
         this.teachname = teachname;
     }
 
-    public String getTeachid() {
-        return teachid;
+    public int getTeacherid() {
+        return teacherid;
     }
 
-    public void setTeachid(String teachid) {
-        this.teachid = teachid;
+    public void setTeacherid(int teacherid) {
+        this.teacherid=teacherid;
     }
 
     public String getDateof() {
@@ -113,14 +113,14 @@ private String batch;
         try {
             connectingDB db=new connectingDB();
              Connection connection = db.connMethod();
-        PreparedStatement stmt=connection.prepareStatement("Insert into STUDEN(FNAME,LNAME,IDNU,DEPARTEMENT,TOTALSTUDENT,TEACHNAME,TEACHID,DATEOF,STATUS,BATCH) values (?,?,?,?,?,?,?,?,?,?)");     
+        PreparedStatement stmt=connection.prepareStatement("Insert into STUDEN(FNAME,LNAME,IDNU,DEPARTEMENT,TOTALSTUDENT,TEACHNAME,TEACHERID,DATEOF,STATUS,BATCH) values (?,?,?,?,?,?,?,?,?,?)");     
         stmt.setString(1,fname);  
         stmt.setString(2,lname);  
         stmt.setInt(3,idnu);  
         stmt.setString(4,departement); 
          stmt.setString(5,totalstudent);  
         stmt.setString(6,teachname);  
-        stmt.setString(7,teachid);  
+        stmt.setInt(7,teacherid);  
         stmt.setString(8,dateof); 
           stmt.setString(9,status);
           stmt.setString(10,batch);
@@ -149,14 +149,14 @@ private String batch;
             Map<String,Object> sessionMapObj = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
             connectingDB db=new connectingDB();
              Connection connection = db.connMethod();
-            PreparedStatement stmt=connection.prepareStatement("update STUDEN set fname=?, lname=?, idnu=?,departement=?, totalstudent=?,teachname=?,teachid=?,dateof=?,status=? where idnu=?");    
+            PreparedStatement stmt=connection.prepareStatement("update STUDEN set fname=?, lname=?, idnu=?,departement=?, totalstudent=?,teachname=?,teacherid=?,dateof=?,status=? where idnu=?");    
             stmt.setString(1,updateStudentObj.getFname());  
             stmt.setString(2,updateStudentObj.getLname());  
             stmt.setInt(3,updateStudentObj.getIdnu());  
             stmt.setString(4,updateStudentObj.getDepartement());  
             stmt.setString(5,updateStudentObj.getTotalstudent());  
             stmt.setString(6,updateStudentObj.getTeachname());  
-            stmt.setString(7,updateStudentObj.getTeachid());  
+            stmt.setInt(7,updateStudentObj.getTeacherid());  
             stmt.setString(8,updateStudentObj.getDateof());  
             stmt.setString(9,updateStudentObj.getStatus());
             stmt.setString(9,updateStudentObj.getBatch());

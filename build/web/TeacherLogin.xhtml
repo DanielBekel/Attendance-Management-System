@@ -5,45 +5,14 @@
     <h:head>
         <title>Teacher login page</title>
         <style>
-          .iconn21{
-                position: absolute;
-                top: 100px;
-                left: 500px;
-            }   
-            
-            .iconn22{
-                position: absolute;
-                top: 130px;
-                left: 500px;
-            }   
-           
-                
-              
           
-
-.pooop {
-    position: absolute;
-                top: 200px;
-                left: 570px;
-	box-shadow:inset 0px 1px 0px 0px #efdcfb;
-	background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
-	background-color:#dfbdfa;
-	border-radius:6px;
-	border:1px solid #c584f3;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	font-style:italic;
-	padding:8px 11px;
-	text-decoration:none;
-	text-shadow:0px -2px 0px #9752cc;
+.footer {
+  background-color: #F1F1F1;
+  text-align: center;
+  padding: 10px;
+  left: 400px;
+  top: 100px;
 }
-
-  
-
             
         </style>
         
@@ -51,12 +20,12 @@
     <h:body>
         
            <h:form>
-          
+               <div class="footer">
           <h:panelGrid columns="1" style="color: green">
             <h:outputLabel for="txtteachName"> 
-                <h:outputText value=" Teachername"/> 
+                <h:outputText class="footer" value=" Teachername"/> 
                
-            <h:inputText id="txtteachName" class ="input" required="true" requiredMessage="name is required" validatorMessage="user name must be"  />
+            <h:inputText id="txtteachName" class="footer" required="true" requiredMessage="name is required" validatorMessage="user name must be"  />
             
                </h:outputLabel>
               </h:panelGrid>
@@ -66,7 +35,7 @@
             <h:panelGrid columns="2" style="color: green">
             <h:outputLabel for="txtpassword"> 
                   <h:outputText value="teacherPassw"/>
-                  <h:inputSecret id="txtpassword" class ="input" required="true" requiredMessage="password is required" validatorMessage="user name must be"  />
+                  <h:inputSecret id="txtpassword" class="footer" required="true" requiredMessage="password is required" validatorMessage="user name must be"  />
               
              </h:outputLabel>
                
@@ -75,9 +44,9 @@
               
            
                  <h:panelGrid columns="3" style="color: green">
-                   <h:commandButton    class="pooop" value="sign in" action="student" />
+                   <h:commandButton   class="footer" value="sign in" action="student" />
                     </h:panelGrid>
-                 
+                 </div>
                   </h:form> 
      
         

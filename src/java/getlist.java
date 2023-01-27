@@ -28,11 +28,11 @@ public class getlist {
           
                 String ttname = rs.getString("FNAME");                             
                String  rrname = rs.getString("LNAME");
-                   String idnuu = rs.getString("IDNU");
+                   int idnuu = rs.getInt("IDNU");
                    String  depar = rs.getString("DEPARTEMENT");
                 String tots = rs.getString("TOTALSTUDENT");
                  String  teaname = rs.getString("TEACHNAME");
-                   String  teaid = rs.getString("TEACHID");
+                   int teaid = rs.getInt("TEACHERID");
                   String  dates = rs.getString("DATEOF");
               String  sta = rs.getString("STATUS");
                String  bat = rs.getString("BATCH");
