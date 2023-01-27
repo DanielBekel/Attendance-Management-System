@@ -24,7 +24,15 @@ public class studentt {
   private String teachid;
   private String dateof;
  private String status;
+private String batch;
 
+    public String getBatch() {
+        return batch;
+    }
+
+    public void setBatch(String batch) {
+        this.batch = batch;
+    }
    
     public String getStatus() {
         return status;
@@ -105,7 +113,7 @@ public class studentt {
         try {
             connectingDB db=new connectingDB();
              Connection connection = db.connMethod();
-        PreparedStatement stmt=connection.prepareStatement("Insert into STUDEN(FNAME,LNAME,IDNU,DEPARTEMENT,TOTALSTUDENT,TEACHNAME,TEACHID,DATEOF,STATUS) values (?,?,?,?,?,?,?,?,?)");     
+        PreparedStatement stmt=connection.prepareStatement("Insert into STUDEN(FNAME,LNAME,IDNU,DEPARTEMENT,TOTALSTUDENT,TEACHNAME,TEACHID,DATEOF,STATUS,BATCH) values (?,?,?,?,?,?,?,?,?,?)");     
         stmt.setString(1,fname);  
         stmt.setString(2,lname);  
         stmt.setInt(3,idnu);  
@@ -115,6 +123,7 @@ public class studentt {
         stmt.setString(7,teachid);  
         stmt.setString(8,dateof); 
           stmt.setString(9,status);
+          stmt.setString(10,batch);
         stmt.executeUpdate();  
             System.err.println("success");
         }
@@ -132,6 +141,7 @@ public class studentt {
         } catch(Exception sqlException){
             sqlException.printStackTrace();
         }
+        System.out.println("deleted");
         return "/student.xhtml?faces-redirect=true";
     }
           public static String update(studentt updateStudentObj) {
@@ -149,6 +159,7 @@ public class studentt {
             stmt.setString(7,updateStudentObj.getTeachid());  
             stmt.setString(8,updateStudentObj.getDateof());  
             stmt.setString(9,updateStudentObj.getStatus());
+            stmt.setString(9,updateStudentObj.getBatch());
             stmt.executeUpdate();
             
             sessionMapObj.put("editRecordObj", idnu);

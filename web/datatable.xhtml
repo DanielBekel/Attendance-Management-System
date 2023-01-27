@@ -5,11 +5,27 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Facelet Title</title>
+        <style>
+         td{
+                margin: 20px;
+                
+                padding: 20px;
+                background-color: violet;
+            }
+             
+            th{
+                background-color: gray;
+                margin: 20px;
+                
+                padding: 20px;
+            } 
+            
+        </style>
     </h:head>
     <h:body style="background-color:white">
        
         <div >
-            <p style="text-align: center; background-color: #52ff7f">  student information  </p></div>
+            <p style="text-align: center; background-color: #000000">  student information  </p></div>
         <div>
 
             <h:dataTable  value="#{getlist.getdisplayStu()}"
@@ -73,6 +89,13 @@
                     STATUS
                     </f:facet>
                     #{varcolumn.status}
+                    
+                </h:column>
+                   <h:column>
+                    <f:facet name="header">
+              BATCH
+                    </f:facet>
+                    #{varcolumn.batch}
                     
                 </h:column>
             </h:dataTable>

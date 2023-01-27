@@ -1,16 +1,22 @@
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.faces.bean.ManagedBean;
 
 
 
 
 
+
+@ManagedBean
 public class Report {
     
     private String teacherName;
     private String selectBatch;
     private String departement;
-    private String totalPresent;
-    private String totalAbsent;
+    private int totalPresent;
+    private int totalAbsent;
    
 public Report(){
     
@@ -32,30 +38,46 @@ public Report(){
         this.selectBatch = selectBatch;
     }
 
-    public String getStudentName() {
+    public String getDepartement() {
         return departement;
     }
 
-    public void setStudentName(String studentName) {
-        this.departement = studentName;
+    public void setDepartement(String departement) {
+        this.departement = departement;
     }
 
-    public String getTotalPresent() {
+    public int getTotalPresent() {
         return totalPresent;
     }
 
-    public void setTotalPresent(String totalPresent) {
+    public void setTotalPresent(int totalPresent) {
         this.totalPresent = totalPresent;
     }
 
-    public String getTotalAbsent() {
+    public int getTotalAbsent() {
         return totalAbsent;
     }
 
-    public void setTotalAbsent(String totalAbsent) {
+    public void setTotalAbsent(int totalAbsent) {
         this.totalAbsent = totalAbsent;
     }
     
-    
+         public void reporter() throws ClassNotFoundException {
+        try {
+            connectingDB db=new connectingDB();
+             Connection connection = db.connMethod();
+        PreparedStatement stmt=connection.prepareStatement("Insert into REPORT(TEACHERNAME,SELECTBATCH,DEPARTEMENT,TOATALPRESENT,TOTALABSENT) values (?,?,?,?,?)");     
+        stmt.setString(1,teacherName);  
+        stmt.setString(2,selectBatch);  
+        stmt.setString(3,departement);  
+        stmt.setInt(4,totalPresent); 
+         stmt.setInt(5,totalAbsent);  
+     
+        stmt.executeUpdate();  
+            System.err.println("success");
+        }
+        catch (SQLException e) {
+        }
+    }
     
 }

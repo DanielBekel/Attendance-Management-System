@@ -12,6 +12,7 @@
                 background-position: center;
             }
               #hea{ background-color: #E4F9F5;
+                    left: 400px;
   color: white;
   padding: 40px;
   text-align: center;
@@ -67,7 +68,7 @@
     <h:body>
         <h1>
             <div class="hea">
-           report
+           Report Page
             </div>
         </h1> 
         
@@ -84,7 +85,7 @@
            
       
             <h:outputLabel value="batch" style="margin: 20px"/>
-<h:selectOneMenu value="userData" class="cssrepo" >
+<h:selectOneMenu value="#{report.selectBatch}" class="cssrepo" >
     <f:selectItem itemValue="2017" itemLabel="2017" />
    <f:selectItem itemValue="2018" itemLabel="2018" />  
     <f:selectItem itemValue="2019" itemLabel="2019" />   
@@ -116,7 +117,7 @@
                 
              
             <br>  </br> 
-            <h:commandButton class ="sub" value="submit" />
+            <h:commandButton class ="sub" value="submit" action="#{report.reporter}" />
             </h:form>
              
     </h:body>

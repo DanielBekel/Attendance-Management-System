@@ -12,9 +12,9 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean
 
 public class getlist {
-      public List <Retrieve> staffList;
+      public List <Retrieve> stud;
     public List <Retrieve> getdisplayStu() throws ClassNotFoundException{
-    staffList = new ArrayList<>();
+    stud = new ArrayList<>();
     
     
       
@@ -35,7 +35,8 @@ public class getlist {
                    String  teaid = rs.getString("TEACHID");
                   String  dates = rs.getString("DATEOF");
               String  sta = rs.getString("STATUS");
-                staffList.add(new Retrieve(ttname,rrname,idnuu,depar,tots,teaname,teaid,dates,sta));
+               String  bat = rs.getString("BATCH");
+                stud.add(new Retrieve(ttname,rrname,idnuu,depar,tots,teaname,teaid,dates,sta,bat));
             } 
              
     }catch( SQLException e)
@@ -44,7 +45,7 @@ public class getlist {
     
     }
     
-    return staffList;
+    return stud;
     }
     }
 

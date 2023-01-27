@@ -49,6 +49,8 @@ public class Retrieve {
         return status;
     }
 
+    public String getBatch() {
+        return batch;}
 
     private final  String fname;
     private final  String lname;
@@ -59,9 +61,9 @@ public class Retrieve {
     private final  String teachid;
     private final  String dateof;
     private final  String status;
+     private final  String batch;
     
-    
-    public Retrieve(String fname, String lname, String idnu, String departement, String totalstudent, String teachname, String teachid, String dateof,String status)
+    public Retrieve(String fname, String lname, String idnu, String departement, String totalstudent, String teachname, String teachid, String dateof,String status,String batch)
     {
     this.fname =fname;
     this.lname=lname;
@@ -73,6 +75,7 @@ public class Retrieve {
     this.teachid=teachid;
     this.dateof=dateof;
     this.status=status;
+    this.batch=batch;
     }
 } 
 

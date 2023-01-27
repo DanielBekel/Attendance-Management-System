@@ -37,7 +37,7 @@
             }
                .iconn6{
               position: absolute;
-             bottom:  100px;
+             bottom:  10px;
               left: 500px;
              
               
@@ -45,10 +45,25 @@
             .opp{
                 color: red;
                 font-size: 2;
+                bottom: 10px;
             }
+         .csstxt{ 
+   
+     font-size: 16px;
+     border-width: 5px;
+     border-color: #CCCCCC;
+     background-color: #FFFFFF;
+     color: #2a73ba;
+     border-style: solid;
+     border-radius: 12px;
+     box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+     text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
+ 
+            
             .iconn7{
                 margin: 40px;
-               
+            bottom: 10px;
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
   background-image: -moz-linear-gradient(top, #3498db, #2980b9);
@@ -64,7 +79,10 @@
   font-size: 16px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-}
+           
+  
+            }
+
 
 .conn7:hover {
   background: #3cb0fd;
@@ -75,7 +93,7 @@
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
             }
-            
+  
         </style>
     </h:head>
     <h:body>
@@ -88,7 +106,7 @@
             <div class="iconn2">
                 <div class="iconn3">   <h:outputLabel  for="txtstufiName"> 
                         <h:outputText class="opp" value="stu fname"/> 
-                <h:inputText id="txtstufiName" value="#{studentt.fname}" />
+                <h:inputText id="txtstufiName" class="csstxt" value="#{studentt.fname}" />
             </h:outputLabel>
             </div>
             <br>  </br>             
@@ -97,21 +115,21 @@
            
             <h:outputLabel for="txtstulaName"> 
                   <h:outputText class="opp" value="stu lname"/>
-                 <h:inputText id="txtstulaName" value="#{studentt.lname}"  />
+                 <h:inputText id="txtstulaName"  class="csstxt"  value="#{studentt.lname}"  />
               </h:outputLabel>
            </div>
             <br>  </br> 
               <div class="iconn3"> 
             <h:outputLabel for="txtstuid"> 
                   <h:outputText class="opp" value="id numb"/>
-                 <h:inputText id="txtstuid" value="#{studentt.idnu}"/>
+                 <h:inputText id="txtstuid"  class="csstxt"  value="#{studentt.idnu}"/>
               </h:outputLabel>
               </div>
             <br>  </br> 
               <div class="iconn3"> 
              <h:outputLabel for="txtdep"> 
                   <h:outputText class="opp" value="departe"/>
-                 <h:inputText id="txtdep" value="#{studentt.departement}"/>
+                 <h:inputText id="txtdep"  class="csstxt"  value="#{studentt.departement}"/>
               </h:outputLabel>
               </div>
             
@@ -119,7 +137,7 @@
               <div class="iconn5">
                <div class="iconn4">   <h:outputLabel  for="txttot"> 
                 <h:outputText class="opp" value="total stu"/> 
-                <h:inputText id="txttot" value="#{studentt.totalstudent}"/>
+                <h:inputText id="txttot"  class="csstxt"  value="#{studentt.totalstudent}"/>
             </h:outputLabel>
             </div>
             <br>  </br>             
@@ -128,27 +146,38 @@
            
             <h:outputLabel for="txtechName"> 
                   <h:outputText class="opp" value="teac name"/>
-                 <h:inputText id="txtechName" value="#{studentt.teachname}"  />
+                 <h:inputText id="txtechName"  class="csstxt"  value="#{studentt.teachname}"  />
               </h:outputLabel>
            </div>
             <br>  </br> 
               <div class="iconn4"> 
             <h:outputLabel for="txttechid"> 
                   <h:outputText class="opp" value="teache id"/>
-                 <h:inputText id="txtteachuid" value="#{studentt.teachid}"/>
+                 <h:inputText id="txtteachuid"  class="csstxt"  value="#{studentt.teachid}"/>
               </h:outputLabel>
               </div>
             <br>  </br> 
-          
+                    <h:outputLabel value="batch" style="margin: 20px"/>
+<h:selectOneMenu value="#{studentt.batch}" class="opp" >
+    <f:selectItem itemValue="2017" itemLabel="2017" />
+   <f:selectItem itemValue="2018" itemLabel="2018" />  
+    <f:selectItem itemValue="2019" itemLabel="2019" />   
+     <f:selectItem itemValue="2020" itemLabel="2020" />   
+      <f:selectItem itemValue="2021" itemLabel="2021" />   
+       <f:selectItem itemValue="2022" itemLabel="2022" /> 
+         <f:selectItem itemValue="2023" itemLabel="2023" />  
+                         </h:selectOneMenu> 
+                    <br></br>
+                   
               <div class="iconn4"> 
              <h:outputLabel for="txtdat"> 
                   <h:outputText class="opp" value="date of c"/>
-                 <h:inputText id="txtdat" value="#{studentt.dateof}"/>
+                 <h:inputText id="txtdat"  class="csstxt"  value="#{studentt.dateof}"/>
               </h:outputLabel>
               </div>
              
                 <h:outputLabel>  status </h:outputLabel>
-                <h:selectOneRadio id="attendd" value="#{studentt.status}">
+                <h:selectOneRadio id="attendd"  class="csstxt"  value="#{studentt.status}">
                     
                     <f:selectItem class="opp" itemValue="present" itemLabel="present"/> 
                     <f:selectItem class="opp" itemValue="absent" itemLabel="absent"/> 

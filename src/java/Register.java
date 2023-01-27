@@ -13,7 +13,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class Register {
    private String teacherName;
-   private String teacherid;
+   private static int teacherid;
    private String date;
   private String pass;
   private String stat;
@@ -38,11 +38,11 @@ public Register(){
         this.teacherName = teacherName;
     }
 
-    public String getTeacherid() {
+    public int getTeacherid() {
         return teacherid;
     }
 
-    public void setTeacherid(String teacherid) {
+    public void setTeacherid(int teacherid) {
         this.teacherid = teacherid;
     }
 
@@ -67,7 +67,7 @@ public Register(){
              Connection connection = db.connMethod();
         PreparedStatement stmt=connection.prepareStatement("Insert into TEACHER(TEACHERNAME,TEACHERID,DATEE,PASS,STAT) values (?,?,?,?,?)");     
         stmt.setString(1,teacherName);  
-        stmt.setString(2,teacherid);  
+        stmt.setInt(2,teacherid);  
         stmt.setString(3,date);  
         stmt.setString(4,pass); 
         stmt.setString(5,stat); 
@@ -77,7 +77,20 @@ public Register(){
         catch (SQLException e) {
         }
     }
-
+      public static String deletion(int teacherid){
+        System.out.println("deleted " + teacherid);
+        try {
+             connectingDB db=new connectingDB();
+             Connection connection = db.connMethod();
+            PreparedStatement stmt=connection.prepareStatement("delete from TEACHER where TEACHERID = " + teacherid);  
+            stmt.executeUpdate();  
+            connection.close();
+        } catch(Exception sqlException){
+            sqlException.printStackTrace();
+        }
+        System.out.println("deleted");
+        return "/registering.xhtml?faces-redirect=true";
+    }
     
     
    }
