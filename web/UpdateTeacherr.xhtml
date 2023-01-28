@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>UPDATION</title>
+        <style>
+              body{
+                background-image: Url("image/thhh.jpeg");
+                background-size: 100%;
+                background-position: center; 
+                
+            }
+            .CSSTE{
+            left: 400px;
+            top: 100px;
+            
+            }
+            .button1 {
+  font-size:15px;
+  font-family:Arial;
+  width:140px;
+  height:50px;
+  border-width:1px;
+  color:#14396a;
+  border-color:#333333;
+  font-weight:bold;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  box-shadow:inset 0px 1px 0px 0px #fff6af;
+  text-shadow:inset 0px 1px 0px #ffee66;
+  background:linear-gradient(#ffec64, #ffab23);
+}
+
+.button1:hover {
+  background: linear-gradient(#ffab23, #ffec64);
+}
+        </style>
+    </h:head>
+    <h:body>
+        <div class="cssall">
+        <h:form>
+            <div class="head">
+            <h1> TEACHER UPDATING PAGE </h1>
+            <h:panelGrid columns="2">
+              <h:outputLabel value=" TeacherName"></h:outputLabel>  
+              <h:inputText size="25" value ="#{updateTeacher.teacherName}"/>
+               <h:outputLabel value=" TeacherId"></h:outputLabel>  
+              <h:inputText size="25" value ="#{updateTeacher.teacherid}"/>
+               <h:outputLabel value="Date"></h:outputLabel>  
+              <h:inputText size="25" value ="#{updateTeacher.date}"/>
+                <h:outputLabel value=" Password"></h:outputLabel>  
+              <h:inputSecret size="25" value ="#{updateTeacher.pass}"/>
+                <h:outputLabel>  status </h:outputLabel>
+               <h:selectOneRadio id="attendd"  class="csstxt"  value="#{updateTeacher.stat}">
+                    
+                    <f:selectItem class="opp" itemValue="present" itemLabel="present"/> 
+                    <f:selectItem class="opp" itemValue="absent" itemLabel="absent"/> 
+                </h:selectOneRadio>
+              
+             
+              </h:panelGrid>
+            <br></br>
+             </div>
+            <div class="button1"> 
+                <h:commandButton class="button1" value ="update" action ="#{updateTeacher.updateTeach()}" ></h:commandButton>
+            </div>
+           
+           
+      
+            
+        </h:form>
+            </div>
+    </h:body>
+</html>
+
