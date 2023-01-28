@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title> Teacher Panel</title>
+        <style>
+               body{
+                background-image: Url("image/thh.jpeg");
+                background-size: 100%;
+                background-position: center;
+            }
+            .hed{
+                position: absolute;
+                left: 400px;
+            }   
+            .group{
+                position: absolute;
+                left: 400px;
+                top: 100px;
+                
+            }
+            .css{
+            
+                 margin: 20px;   
+  
+	background-color:#89c403;
+	-webkit-border-radius:28px;
+	-moz-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528009;
+}
+.css:hover {
+	background-color:#77a809;
+}
+css:active {
+	position:relative;
+	top:1px;
+}
+
+        </style>
+    </h:head>
+    <h:body>
+        <div class="hed">
+        <h1> Teacher Panel</h1>
+        </div>
+        <h:form>
+            
+            <br>
+                 
+             </br>
+            <div class="group">
+             <h:commandButton class="css" value="report" action="report"/>  
+            <h:commandButton class="css" value="student"  action="student"/>
+       </div>
+        </h:form>
+    </h:body>
+</html>
+
