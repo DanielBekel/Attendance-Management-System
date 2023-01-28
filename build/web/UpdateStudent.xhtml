@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title> userpage Title</title>
+        <style> 
+            body{
+                background-image: Url("image/up.jpeg");
+                background-size: 100%;
+                background-position: center; 
+                
+            }
+        .Button{
+                width: 200px;
+                height: 60px;
+                display: flex;
+        }
+        .cssall{
+            position: absolute;
+            left: 400px;
+            top: 100px;
+        }
+            
+        
+        </style>
+    </h:head>
+    <h:body>
+        <div class="cssall">
+        <h:form>
+            <div class="head">
+            <h1> STUDENT INFORMATION </h1>
+            <h:panelGrid columns="2">
+              <h:outputLabel value=" Fname"></h:outputLabel>  
+              <h:inputText size="25" value ="#{updateStudentClass.fname}"/>
+               <h:outputLabel value=" Lname"></h:outputLabel>  
+              <h:inputText size="25" value ="#{updateStudentClass.lname}"/>
+               <h:outputLabel value=" Idnu"></h:outputLabel>  
+              <h:inputText size="25" value ="#{updateStudentClass.idnu}"/>
+                <h:outputLabel value=" Depart"></h:outputLabel>  
+              <h:inputText size="25" value ="#{updateStudentClass.departement}"/>
+              
+              
+              
+              <h:outputLabel value=" TotStu"></h:outputLabel>  
+               <h:inputText size="25" value ="#{updateStudentClass.totalstudent}"/>
+               <h:outputLabel value=" TeachName"></h:outputLabel>  
+              <h:inputText size="25" value ="#{updateStudentClass.teachname}"/>
+             <h:outputLabel value=" TeacherId"></h:outputLabel>  
+              <h:inputText size="25" value ="#{updateStudentClass.teacherid}"/>
+               <h:outputLabel value=" Dateof"></h:outputLabel>  
+              <h:inputText size="25" value ="#{updateStudentClass.dateof}"/>
+               <h:outputLabel>  status </h:outputLabel>
+                <h:selectOneRadio id="attendd"  class="csstxt"  value="#{updateStudentClass.status}">
+                    
+                    <f:selectItem class="opp" itemValue="present" itemLabel="present"/> 
+                    <f:selectItem class="opp" itemValue="absent" itemLabel="absent"/> 
+                </h:selectOneRadio>
+                 <h:outputLabel value="batch" style="margin: 20px"/>
+              <h:selectOneMenu value="#{updateStudentClass.batch}" class="opp" >
+    <f:selectItem itemValue="2017" itemLabel="2017" />
+   <f:selectItem itemValue="2018" itemLabel="2018" />  
+    <f:selectItem itemValue="2019" itemLabel="2019" />   
+     <f:selectItem itemValue="2020" itemLabel="2020" />   
+      <f:selectItem itemValue="2021" itemLabel="2021" />   
+       <f:selectItem itemValue="2022" itemLabel="2022" /> 
+         <f:selectItem itemValue="2023" itemLabel="2023" />  
+                         </h:selectOneMenu> 
+              </h:panelGrid>
+            <br></br>
+             </div>
+            <div class="button1"> 
+                <h:commandButton value ="update" action ="#{updateStudentClass.updateStu()}" ></h:commandButton>
+            </div>
+           
+           
+      
+            
+        </h:form>
+            </div>
+    </h:body>
+</html>
