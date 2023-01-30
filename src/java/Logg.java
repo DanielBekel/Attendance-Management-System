@@ -55,7 +55,7 @@ public class Logg {
                     new FacesMessage(FacesMessage.SEVERITY_WARN,
                             "Incorrect Username and Passowrd",
                             "Please enter correct username and Password"));
-            return "ManuPage";
+            return "index";
         }
     }
  

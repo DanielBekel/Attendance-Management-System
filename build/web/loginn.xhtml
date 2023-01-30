@@ -75,7 +75,7 @@
             <h:outputLabel for="txtUserName"> 
                 <h:outputText value=" username"/> 
                
-            <h:inputText id="txtUserName" class="csstxt" required="true" requiredMessage="username is required" validatorMessage="user name must be" value="#{logg.userName}" />
+                <h:inputText maxlength="8" id="txtUserName" class="csstxt" required="true" requiredMessage="username is required" validatorMessage="user name must be" value="#{logg.userName}" />
             
                </h:outputLabel>
               </h:panelGrid>
@@ -83,7 +83,7 @@
             <h:panelGrid columns="2" style="color: green">
             <h:outputLabel for="txtpassword"> 
                   <h:outputText value="userPass"/>
-                  <h:inputSecret id="txtpassword" class="csstxt"  required="true" requiredMessage="password is required" validatorMessage="user name must be" value="#{logg.password}"  />
+                  <h:inputSecret  id="txtpassword" class="csstxt"  required="true" requiredMessage="password is required" validatorMessage="user name must be" value="#{logg.password}"  />
               
              </h:outputLabel>
                

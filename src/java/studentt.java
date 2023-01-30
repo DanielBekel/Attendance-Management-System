@@ -144,31 +144,6 @@ private String batch;
         System.out.println("deleted");
         return "/student.xhtml?faces-redirect=true";
     }
-          public static String update(studentt updateStudentObj) {
-        try {
-            Map<String,Object> sessionMapObj = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
-            connectingDB db=new connectingDB();
-             Connection connection = db.connMethod();
-            PreparedStatement stmt=connection.prepareStatement("update STUDEN set fname=?, lname=?, idnu=?,departement=?, totalstudent=?,teachname=?,teacherid=?,dateof=?,status=? where idnu=?");    
-            stmt.setString(1,updateStudentObj.getFname());  
-            stmt.setString(2,updateStudentObj.getLname());  
-            stmt.setInt(3,updateStudentObj.getIdnu());  
-            stmt.setString(4,updateStudentObj.getDepartement());  
-            stmt.setString(5,updateStudentObj.getTotalstudent());  
-            stmt.setString(6,updateStudentObj.getTeachname());  
-            stmt.setInt(7,updateStudentObj.getTeacherid());  
-            stmt.setString(8,updateStudentObj.getDateof());  
-            stmt.setString(9,updateStudentObj.getStatus());
-            stmt.setString(9,updateStudentObj.getBatch());
-            stmt.executeUpdate();
-            
-            sessionMapObj.put("editRecordObj", idnu);
-            connection.close(); 
-        } catch(Exception sqlException) {
-            sqlException.printStackTrace();
-        }
-        return "/student.xhtml?faces-redirect=true";
-    }
-          
+        
   
 }
